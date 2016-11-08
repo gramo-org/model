@@ -166,6 +166,7 @@ module Hanami
       protected
 
       def get_attributes
+        @attributes ||= Set.new
         if self.superclass.respond_to?(:attributes)
           @attributes + self.superclass.get_attributes
         else
