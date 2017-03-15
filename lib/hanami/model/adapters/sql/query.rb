@@ -754,7 +754,7 @@ module Hanami
           #   # You're welcome ;)
           def apply(query)
             dup.tap do |result|
-              result.conditions.push(*query.conditions) if query.conditions
+              result.conditions.push(*query.conditions) if query.respond_to? :conditions
             end
           end
 
